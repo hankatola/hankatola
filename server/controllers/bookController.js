@@ -60,6 +60,7 @@ module.exports = function () {
     },
     googleBooks: (req, res) => {
       const google = {url: `${url}?q=${req.params.str}`}
+      console.log('search term: ', google);
       request(google, (err, data, body) => {
         const googleBooks = JSON.parse(data.body).items
         const ids = []
